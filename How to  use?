@@ -1,0 +1,6 @@
+1.Run server using "python server.py" then wait for connection from client(server running socket at port 3000)
+
+2.Compile file client.cpp "g++ client -o client"
+
+3.Run client "./client filename IP_server Port_server(3000)"
+Example ./client picture.jpg 192.168.x.x 3000
