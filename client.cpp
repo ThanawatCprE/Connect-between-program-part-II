@@ -16,8 +16,9 @@ Defaults:
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <sys/types.h>
 #include <arpa/inet.h>
+#include <string.h>
 #include <fcntl.h>
 #include <netdb.h> /* getprotobyname */
 #include <netinet/in.h>
@@ -89,7 +90,8 @@ int main(int argc, char **argv) {
         perror("connect");
         return EXIT_FAILURE;
     }
-
+    write(sockfd, file_path, strlen(file_path));
+    printf("Send fliename%s\n", buffer);
     while (1) {
         read_return = read(filefd, buffer, BUFSIZ);
         if (read_return == 0)
